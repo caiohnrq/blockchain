@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="blockchain:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/blockchain_jar</output-path>
+    <root id="archive" name="blockchain.jar">
+      <element id="module-output" name="blockchain" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/lombok-1.18.12.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/gson-2.8.6.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
