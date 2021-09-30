@@ -1,5 +1,3 @@
-**Blockchain Miner Project**
+**Blockchain Project**
 
-#TO RUN THE APPLICATION
-
-java -jar miner.jar
+THIS PROJECT WAS USED AS A LIB ON BLOCKCHAIN MINER PROJECT
