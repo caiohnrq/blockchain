@@ -10,18 +10,18 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
-        Blockchain blockchain = Node.connectToNode();
+//        Blockchain blockchain = Node.connectToNode();
 
-        blockchain.mineBlock();
-        blockchain.mineBlock();
-        blockchain.mineBlock();
-        blockchain.mineBlock();
+//        blockchain.mineBlock();
+//        blockchain.mineBlock();
+//        blockchain.mineBlock();
+//        blockchain.mineBlock();
 
 //        Block.mineBlock();
 //        Block.mineBlock();
 //        Block.mineBlock();
 
-        System.out.println(blockchain.isChainValid());
+//        System.out.println(blockchain.isChainValid());
 //        System.out.println(blockchain.isChainValid2());
     }
 }

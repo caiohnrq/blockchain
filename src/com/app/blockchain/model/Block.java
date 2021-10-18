@@ -38,7 +38,7 @@ public class Block {
         return hashId;
     }
 
-    public static Block mineBlock(){
+    public synchronized static Block mineBlock(){
         var size = Blockchain.getBlockchain().size();
 
         Block newBlock = (size == 0) ?

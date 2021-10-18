@@ -3,8 +3,7 @@ package com.app.blockchain.model;
 import com.google.gson.GsonBuilder;
 import lombok.extern.java.Log;
 
-import java.util.Collection;
-import java.util.LinkedHashSet;
+import java.util.*;
 import java.util.logging.Level;
 
 @Log
@@ -15,19 +14,19 @@ public class Blockchain {
     private static final int difficulty = 2;
     private static final LinkedHashSet<Block> blockchain = new LinkedHashSet<>();
 
-    public static void mineBlock() throws Exception {
+    public static synchronized void mineBlock(String minerId) throws Exception {
         var block = Block.mineBlock();
 
         if(block != null) {
             getBlockchain().add(block);
-            log.log(Level.INFO, "New block was mined and added to blockchain " + block);
+            log.log(Level.INFO, String.format("%s mined a new block and added to blockchain %s", minerId, block));
         } else {
             log.log(Level.SEVERE, "Block mined was invalid");
             throw new Exception("Block mined was invalid");
         }
     }
 
-    public static Boolean isChainValid() {
+    public static synchronized Boolean isChainValid() {
         blockchain
                 .stream()
                 .filter(block -> !block.getPrevHash().equals("0"))
@@ -47,7 +46,7 @@ public class Blockchain {
         return new GsonBuilder().setPrettyPrinting().create().toJson(blockchain);
     }
 
-    public static LinkedHashSet<Block> getBlockchain() {
+    public static synchronized LinkedHashSet<Block> getBlockchain() {
         return blockchain;
     }
 
